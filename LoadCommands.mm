@@ -77,6 +77,7 @@ using namespace std;
     case LC_LINKER_OPTION:        return @"LC_LINKER_OPTION";
     case LC_LINKER_OPTIMIZATION_HINT: return @"LC_LINKER_OPTIMIZATION_HINT";
     case LC_BUILD_VERSION:        return @"LC_BUILD_VERSION";
+    case LC_ATOM_INFO:            return @"LC_ATOM_INFO";
   }
 }
 
@@ -2385,6 +2386,7 @@ using namespace std;
     case LC_LINKER_OPTIMIZATION_HINT:
     case LC_DYLD_EXPORTS_TRIE:
     case LC_DYLD_CHAINED_FIXUPS:
+    case LC_ATOM_INFO:
     {
       MATCH_STRUCT(linkedit_data_command,location)
       node = [self createLCLinkeditDataNode:parent 
